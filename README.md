@@ -15,5 +15,6 @@ The system provides the following functionalities, each accessible by selecting 
 # Demo
 
 ### Project demo
-https://github.com/ixicute/aspLab2/assets/25350208/f521f704-1eed-465b-9276-c6191c8fd349
+https://github.com/ixicute/aspLab2/assets/25350208/13eb08c9-c94e-402f-988a-77768282c9c4
+
 
