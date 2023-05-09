@@ -1,0 +1,47 @@
+﻿@using SkolprojektLab2.ViewModels;
+@model List<StudentTeacherSearchViewModel>
+
+<div>
+    <form asp-action="GetStudentBySubject" method="get" class="d-flex justify-content-end" style="max-width: 100%">
+
+        <div class="form-group">
+            <label for="searchString"><b>Type the name of a subject:</b></label>
+            <div class="input-group">
+                <input type="text" class="form-control" name="searchString" value="" />
+                <div class="input-group-append">
+                    <input type="submit" value="Search" class="btn btn-primary">
+                </div>
+            </div>
+        </div>
+    </form>
+    @if (Model.Count < 1)
+    {
+        <p class="text-danger text-center"><b>Nothing found.</b></p>
+    }
+    <table class="table table-striped table-bordered table-hover mt-5">
+        <thead class="table-primary">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Student</th>
+                <th scope="col">Course</th>
+                <th scope="col">Teacher</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        @if (Model.Count >= 1)
+        {
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="row"><b>@item.FK_RelationshipTable</b></td>
+                        <td scope="row">@item.StudentName</td>
+                        <td scope="row">@item.CourseName</td>
+                        <td scope="row">@item.TeacherName</td>
+                        <td scope="row"><a asp-action="EditSubjectName" asp-route-id="@item.CourseId">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        }
+    </table>
+</div>
